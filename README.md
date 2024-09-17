@@ -37,18 +37,19 @@ dotnet watch
 
 ### Framework
 
-<img src="https://i.postimg.cc/Njynpm64/mudblazor.png" width=35px>
+<img src="https://acortar.link/mAWTXg" width=35px>
 
 ### Librerias
 
-- MudBlazor v7.8.0
-- Components.WebAssembly v8.0.2
-- Blazored.Modal v7.3.1
+- Xunit v2.5.3
+- Moq v4.20.72
+- Pomelo.EntityFrameworkCore.MySql v8.0.2
+- Microsoft.EntityFrameworkCore v8.0.8
 
 
 ### Base de datos
 
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![MySql](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ### Documentación
 
