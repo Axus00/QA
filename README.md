@@ -11,7 +11,7 @@ En este proyecto, se desarrolló una API conectada a una base de datos MySQL alo
 
 ###
 
-- Ir a la carpeta raíz del proyecto ./frontend
+- Ir a la carpeta raíz del proyecto ./Api
 
 - Abrir la terminal
 
@@ -26,6 +26,32 @@ o
 ```bash
 dotnet watch
 ```
+
+> 💡 Para poder iniciar el proyecto ApiTest es necesario tener instalado [Xunit](https://www.nuget.org/packages/xunit)
+
+###
+
+- Ir a la carpeta raíz del proyecto ./ApiTest
+  
+- Abrir la terminal
+
+```bash
+ctrl + ñ
+```
+  
+- Iniciar el proyecto con
+
+```bash
+dotnet test
+```
+
+Estos pasos cargarán las pruebas unitarias Xunit en la terminal bash o la terminal de su preferencia de la siguiente manera:
+
+![image](https://github.com/user-attachments/assets/58b0251a-e6a0-4156-95bb-a35d21206dd3)
+
+Indicando que las pruebas ejecutadas han sido resueltas de manera correcta.
+
+  
 
 ## Tecnologías 🖥️
 
