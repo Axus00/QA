@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "2a6b1837-dfc5-43c5-9508-ac958b84ce4c",
+		"name": "QA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32236410",
+		"_collection_link": "https://planetary-astronaut-28392.postman.co/workspace/ServerBooks~f4ce802e-a3f0-49e6-861b-617a81c068b8/collection/32236410-2a6b1837-dfc5-43c5-9508-ac958b84ce4c?action=share&source=collection_link&creator=32236410"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get",
+					"item": [
+						{
+							"name": "GetUsers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Url}}/api/users",
+									"host": [
+										"{{Url}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

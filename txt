@@ -1,0 +1,15 @@
+Las conexiones para la base de datos que se utilizó (MySql) se realizaron por medio de CleverCloud
+
+server= bcrn01sve84ak1mcbrs1-mysql.services.clever-cloud.com; 
+database= bcrn01sve84ak1mcbrs1; 
+port=3306; 
+uid= uwgu1duz45h0kmxt; 
+password= AVGENXE16C4VjAgrzhuO;
+
+Esto con la finalidad de poder ejemplarizar cómo se realiza una prueba unitaria con proyectos separados y ser más independientes a la hora de testar.
+
+POSTMAN
+
+Para postman se usó una variable de entorno global con el puerto 
+
+Url = http://localhost:5283/
