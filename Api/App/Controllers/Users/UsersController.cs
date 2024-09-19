@@ -51,11 +51,16 @@ namespace Api.App.Controllers.Users
             try
             {
                 var userById = await _service.GetUserById(id);
+                if(userById == null)
+                {
+                    return NotFound(Utils.Exceptions.StatusError.CreateNotFound());
+                }
                 return Ok(userById);
             }
             catch (Exception)
             {
-                throw new Exception(Error);
+                return StatusCode(500, Error);
+                throw;
             }
         }
     }

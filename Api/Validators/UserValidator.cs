@@ -11,16 +11,26 @@ namespace Api.Validators
     {
         public UserValidator()
         {
-            Include(new UserFullNameRule());
+            Include(new UserNamesRule());
+            Include(new UserLastNamesRule());
             Include(new UserEmailRule());
         }
 
         //validations
-        public class UserFullNameRule : AbstractValidator<User>
+        public class UserNamesRule : AbstractValidator<User>
         {
-            public UserFullNameRule()
+            public UserNamesRule()
             {
-                RuleFor(user => user.FullName).NotEmpty()
+                RuleFor(user => user.Names).NotEmpty()
+                                              .WithMessage("The field FullName is required");
+            }
+        }
+
+        public class UserLastNamesRule : AbstractValidator<User>
+        {
+            public UserLastNamesRule()
+            {
+                RuleFor(user => user.LastNames).NotEmpty()
                                               .WithMessage("The field FullName is required");
             }
         }
