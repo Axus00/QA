@@ -12,6 +12,7 @@ namespace Api.App.Controllers.Users
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository _service;
+        private string Error = "The request has no been resolved";
         public UsersController(IUserRepository service)
         {
             _service = service;
@@ -21,8 +22,41 @@ namespace Api.App.Controllers.Users
         [HttpGet]
         public async Task<IActionResult> Get()
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(Utils.Exceptions.StatusError.CreateBadRequest());
+            }
+
+            try
+            {
+                
+            }
+            catch (Exception)
+            {
+                throw new Exception(Error);
+            }
+
             var users = await _service.GetUsers();
             return Ok(users);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(Utils.Exceptions.StatusError.CreateBadRequest());
+            }
+
+            try
+            {
+                var userById = await _service.GetUserById(id);
+                return Ok(userById);
+            }
+            catch (Exception)
+            {
+                throw new Exception(Error);
+            }
         }
     }
 }

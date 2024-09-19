@@ -12,6 +12,13 @@ namespace Api.Services.Repository
         {
             _context = context;
         }
+
+        public async Task<User> GetUserById(int id)
+        {
+            var userById = await _context.Users.FirstOrDefaultAsync(user => user.Id == id);
+            return userById;
+        }
+
         public async Task<IEnumerable<User>> GetUsers()
         {
             var users = await _context.Users.ToListAsync();

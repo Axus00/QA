@@ -9,5 +9,6 @@ namespace Api.Services.Interface
     public interface IUserRepository
     {
         Task<IEnumerable<User>> GetUsers();
+        Task<User> GetUserById(int id);
     }
 }

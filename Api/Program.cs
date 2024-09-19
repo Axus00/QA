@@ -1,9 +1,14 @@
 using Api.Infrastructure.Data;
+using Api.Models;
 using Api.Services.Interface;
 using Api.Services.Repository;
+using Api.Validators;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+const string MyCors = "CorsPolicy";
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -17,6 +22,20 @@ builder.Services.AddDbContext<BaseContext>(options =>
                     options.UseMySql(
                     builder.Configuration.GetConnectionString("DbConnection"),
                     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")));
+
+
+//Cors
+builder.Services.AddCors(policy => {
+    policy.AddPolicy(MyCors, builder => 
+    {
+        builder.WithOrigins("http://localhost:5283/")
+                .WithHeaders("content-type")
+                .WithMethods("GET");
+    });
+});
+
+//service to Validators
+builder.Services.AddScoped<IValidator<User>, UserValidator>();
 
 
 //service to interface
@@ -52,6 +71,8 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthentication();
 app.UseAuthorization();
